@@ -137,7 +137,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@lucasclerisse](https://twitter.com/lucasclerisse) - lucasclerisse@protonmail.com
+Author - [@lucasclerisse](https://twitter.com/lucasclerisse) - lucasclerisse@protonmail.com
 
 Project Link: [https://github.com/lucasclerissepro/northstar](https://github.com/lucasclerissepro/northstar)
 

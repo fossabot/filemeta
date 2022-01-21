@@ -102,10 +102,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Cloud Provider
+  - [ ] AWS
+    - [ ] K3S
+    - [ ] Managed
+  - [ ] Google Cloud
+    - [ ] K3S
+    - [ ] Managed
+  - [ ] Azure 
+    - [ ] K3S
+    - [ ] Managed
 
 See the [open issues](https://github.com/lucasclerissepro/northstar/issues) for a full list of proposed features (and known issues).
 

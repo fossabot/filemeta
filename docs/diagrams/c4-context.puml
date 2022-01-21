@@ -1,15 +1,32 @@
 @startuml
 
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS/react.puml
+!include DEVICONS/rust.puml
+
+LAYOUT_TOP_DOWN()
+
+title Container diagram for Internet Banking System
 
 Person(user, "Kubernetes consumer")
-Person(operator, "Kubernetes Operator")
 
-System(northstar, "Northstar", "Allow users to provision and orchestrate customized kubernetes clusters")
 System_Ext(cloud, "Cloud Provider", "Provide managed cloud services")
 
-Rel(user, northstar, "Create and list clusters using")
-Rel(operator, northstar, "Create pre-configured clusters templates using")
-Rel(northstar, cloud, "Create servers and orchestrate clusters using")
+System_Boundary(northstar, "Northstar") {
+    Container(cli, "Command Line Interface", "Rust", "Provides all Northstar functionnality to customer via their terminal", "rust")
+    Container(spa, "Single Page Application", "Javascript, React", "Provides simplified UI to maintain clusters", "react")
+    Container(api, "API", "Rust, Actix", "Provides Northstar functionality via a JSON/GRPC API", "rust")
+}
+
+Rel(user, cli, "Views and create clusters using")
+Rel(user, spa, "Views and create clusters using", "https")
+
+Rel(cli, api, "Makes api calls to", "JSON/HTTPS")
+Rel(spa, api, "Makes api calls to", "JSON/HTTPS")
+
+Rel(api, cloud, "Provision clusters using", "https")
 
 @enduml

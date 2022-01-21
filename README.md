@@ -81,7 +81,7 @@ Northstar is entirely extensible trough plugins, if you want your clusters to be
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+Follow these simple example steps to get a local copy up and running.
 
 ### Prerequisites
 

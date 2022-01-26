@@ -1,32 +1,30 @@
 @startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 !define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
-!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
-!include DEVICONS/react.puml
-!include DEVICONS/rust.puml
+!define FAS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+
+!include FAS/aws.puml
+!include DEVICONS/google_cloud_platform.puml
 
 LAYOUT_TOP_DOWN()
 
-title Container diagram for Internet Banking System
+title Context Diagram
 
-Person(user, "Kubernetes consumer")
+Person(consumer, "An infrastructure consumer")
+Person(producer, "An infrastructure producer")
 
-System_Ext(cloud, "Cloud Provider", "Provide managed cloud services")
+System(northstar, "Northstar", "Orchestrates cloud infrastructure")
 
-System_Boundary(northstar, "Northstar") {
-    Container(cli, "Command Line Interface", "Rust", "Provides all Northstar functionnality to customer via their terminal", "rust")
-    Container(spa, "Single Page Application", "Javascript, React", "Provides simplified UI to maintain clusters", "react")
-    Container(api, "API", "Rust, Actix", "Provides Northstar functionality via a JSON/GRPC API", "rust")
-}
+System_Ext(aws, "Amazon Web Services", $sprite="aws")
+System_Ext(gcp, "Google Cloud Platform", $sprite="google_cloud_platform")
+System_Ext(cloud, "Another Cloud")
 
-Rel(user, cli, "Views and create clusters using")
-Rel(user, spa, "Views and create clusters using", "https")
+Rel_L(consumer, northstar, "Provision infrastructure abstractions using")
+Rel_R(producer, northstar, "Build infrastructure abstractions using")
 
-Rel(cli, api, "Makes api calls to", "JSON/HTTPS")
-Rel(spa, api, "Makes api calls to", "JSON/HTTPS")
-
-Rel(api, cloud, "Provision clusters using", "https")
+Rel(northstar, aws, "Create infrastructure on")
+Rel(northstar, gcp, "Create infrastructure on")
+Rel(northstar, cloud, "Create infrastructure on")
 
 @enduml

@@ -61,7 +61,7 @@
 
 Northstar is born from a simple observation - **Terraform** is amazing but:
 
-- It's not meant to be in the hot path of your users
+- It's not meant to be in the **hot path** of your users
 - It is a tool used in your CI / Local machine
 
 ⭐ Northstar tries to address these issues by:
@@ -89,6 +89,19 @@ Northstar is born from a simple observation - **Terraform** is amazing but:
 ## Getting Started
 
 Follow these simple example steps to get a local copy up and running.
+
+## How it works
+
+There is multiple c4 diagrams available for you to understand the overall architecture but the overall architecture is
+as follows.
+
+On a very high level:
+
+![diagram](docs/diagrams/c4-context.png)
+
+Slightly zoomed-in:
+
+![diagram](docs/diagrams/c4-container.png)
 
 ### Prerequisites
 

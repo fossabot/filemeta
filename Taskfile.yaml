@@ -1,0 +1,25 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    deps: [ diagrams ]
+
+  diagrams:
+    desc: Build PlantUML diagrams
+    dir: docs/diagrams
+    summary: |
+      Build PlantUML diagrams
+      
+      It will automatically get all diagrams available in the diagrams folder and render them into PNG in the same
+      folder.
+    sources:
+      - ./**/*.puml
+    cmds:
+      - plantuml $(ls *.puml)
+
+

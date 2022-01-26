@@ -1,0 +1,45 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FAS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+
+!include FAS/aws.puml
+!include DEVICONS/google_cloud_platform.puml
+
+LAYOUT_TOP_DOWN()
+
+title Container Diagram
+
+Person(consumer, "An infrastructure consumer")
+Person(producer, "An infrastructure producer")
+
+System_Ext(aws, "Amazon Web Services", $sprite="aws")
+System_Ext(gcp, "Google Cloud Platform", $sprite="google_cloud_platform")
+
+System_Boundary(northstar_group, "Northstar") {
+    Container(api_service, "API Service", "Actix Web", "Allows users to create new resource type and trigger executions")
+    Container(maestro_service, "Maestro Service", "Actix Web", "Executes provisioning actions in the right order")
+    Container(aws_service, "AWS Service", "Actix Web", "Converts internal event types into AWS API Calls")
+    Container(gcp_service, "GCP Service", "Actix Web", "Converts internal event types into GCP API Calls")
+    ContainerDb(database, "Database", "MongoDB 4.3", "Stores last infrastructure known state, tenants and constructs")
+    ContainerQueue(queue, "Queue", "NATS", "Stores and dispatch internal events used for asynchronous processing")
+}
+
+Rel_D(maestro_service, queue, "Listen from and writes events to", "TCP")
+Rel_D(api_service, queue, "Listen from and writes events to", "TCP")
+
+Rel_R(api_service, database, "Reads from and writes to", "TCP, port 27017")
+Rel_L(maestro_service, database, "Reads from and writes to", "TCP, port 27017")
+
+Rel_D(queue, aws_service, "Listen from and writes events to", "TCP")
+Rel_D(queue, gcp_service, "Listen from and writes events to", "TCP")
+
+
+Rel(aws_service, aws, "Get state and provision AWS services using", "HTTPS")
+Rel(gcp_service, gcp, "Get state and provision GCP services using", "HTTPS")
+
+Rel(consumer, api_service, "Trigger provision execution of infrastructure abstractions using", "HTTPS")
+Rel(producer, api_service, "Build infrastructure abstractions using", "HTTPS")
+
+@enduml

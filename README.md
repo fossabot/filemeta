@@ -10,25 +10,24 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/lucasclerissepro/northstar">
-    <img src=".github/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/lucasclerissepro/filemeta">
+    <img src=".github/logo.png" alt="Logo" width="250" height="80">
   </a>
 
-<h3 align="center">Northstar</h3>
-  <p align="center">
-    Northstar is a horizontally scalable and multi-tenant alternative to Terraform.  
-    <br>
-    Suitable for companies providing self-hosted software.
-    <br />
-    <a href="https://github.com/lucasclerissepro/northstar"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/lucasclerissepro/northstar">View Demo</a>
-    ·
-    <a href="https://github.com/lucasclerissepro/northstar/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/lucasclerissepro/northstar/issues">Request Feature</a>
-  </p>
+<p align="center">
+Filemeta is a program allowing you to recover information about any files.
+Extensible by nature Filemeta can support almost any filetype.
+<br>
+<br />
+<a href="https://github.com/lucasclerissepro/filemeta"><strong>Explore the docs »</strong></a>
+<br />
+<br />
+<a href="https://github.com/lucasclerissepro/filemeta">View Demo</a>
+·
+<a href="https://github.com/lucasclerissepro/filemeta/issues">Report Bug</a>
+·
+<a href="https://github.com/lucasclerissepro/filemeta/issues">Request Feature</a>
+</p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -59,53 +58,20 @@
 
 ## About The Project
 
-Northstar is born from a simple observation - **Terraform** is amazing but:
-
-- It's not meant to be in the **hot path** of your users
-- It is a tool used in your CI / Local machine
-
-⭐ Northstar tries to address these issues by:
-
-- Being API-driven.
-- Being a horizontally scalable and multi-tenant system.
-- Being a real distributed system ready to be in the hot path of consumers.
-
-🌟 On top of that, Northstar provides the usual features you would expect from an infrastructure orchestrator:
-
-- Automated drift correction
-- Composable infrastructure resources
-- Multi-cloud
-- Extensibility
-
-❌ Northstar is not for you if:
-
-- You are not willing to deploy a reasonably complex system
-- You don't need API driven provisioning
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
+Filemeta is at the core of [Filegraph](https://filegraph.io) and is used to discover as much as possible of informations
+of files. Multiple plugins are available for each filetype, including some plugins relying on machine learning.
 
 ## Getting Started
 
-Follow these simple example steps to get a local copy up and running.
+You can download prebuilt binaries on the [release]() page or follow the section below to build from source.
 
 ## How it works
 
-There is multiple c4 diagrams available for you to understand the overall architecture but the overall architecture is
-as follows.
-
-On a very high level:
-
-![diagram](docs/diagrams/c4-context.png)
-
-Slightly zoomed-in:
-
-![diagram](docs/diagrams/c4-container.png)
+TBD
 
 ### Prerequisites
 
-To run Northstar you will need to have Rust installed on your machine, you can then run:
+To run filemeta you will need to have Rust installed on your machine, you can then run:
 
     cargo build
 
@@ -113,10 +79,17 @@ To build the various libraries and binaries.
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos
-work well in this space. You may also link to more resources.
+When you have the binary just run:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+    filemeta start
+
+And finally:
+
+    filemeta submit file hello.png
+
+Filemeta works best when running as a daemon on your machine because some plugins are requiring a bit of startup time.
+
+_For more examples, please refer to the [Documentation](https://docs.filegraph.io/meta)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -124,22 +97,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-I currently develop Northstar on my free time so the roadmap is simple and something I can execute in a limited amount
-of time.
+I currently develop Filemeta on my free time so the roadmap is simple and something I can execute in a limited amount of
+time.
 
-- [ ] Cloud Provider
-    - [ ] AWS
-        - [ ] K3S
-        - [ ] Managed
-    - [ ] Google Cloud
-        - [ ] K3S
-        - [ ] Managed
-    - [ ] Azure
-        - [ ] K3S
-        - [ ] Managed
-
-See the [open issues](https://github.com/lucasclerissepro/northstar/issues) for a full list of proposed features (and
-known issues).
+See the [open issues](https://github.com/lucasclerissepro/filemeta/issues) for a full list of proposed features (and
+known issues) and [milestones]() for the roadmap.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -168,7 +130,7 @@ simply open an issue with the tag "enhancement". Don't forget to give the projec
 
 Author - [@lucasclerisse](https://twitter.com/lucasclerisse) - lucasclerisse@protonmail.com
 
-Project Link: [https://github.com/lucasclerissepro/northstar](https://github.com/lucasclerissepro/northstar)
+Project Link: [https://github.com/lucasclerissepro/filemeta](https://github.com/lucasclerissepro/filemeta)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -177,25 +139,25 @@ Project Link: [https://github.com/lucasclerissepro/northstar](https://github.com
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/lucasclerissepro/northstar.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/lucasclerissepro/filemeta.svg?style=for-the-badge
 
-[contributors-url]: https://github.com/lucasclerissepro/northstar/graphs/contributors
+[contributors-url]: https://github.com/lucasclerissepro/filemeta/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/lucasclerissepro/northstar.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/lucasclerissepro/filemeta.svg?style=for-the-badge
 
-[forks-url]: https://github.com/lucasclerissepro/northstar/network/members
+[forks-url]: https://github.com/lucasclerissepro/filemeta/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/lucasclerissepro/northstar.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/lucasclerissepro/filemeta.svg?style=for-the-badge
 
-[stars-url]: https://github.com/lucasclerissepro/northstar/stargazers
+[stars-url]: https://github.com/lucasclerissepro/filemeta/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/lucasclerissepro/northstar.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/lucasclerissepro/filemeta.svg?style=for-the-badge
 
-[issues-url]: https://github.com/lucasclerissepro/northstar/issues
+[issues-url]: https://github.com/lucasclerissepro/filemeta/issues
 
-[license-shield]: https://img.shields.io/github/license/lucasclerissepro/northstar.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/lucasclerissepro/filemeta.svg?style=for-the-badge
 
-[license-url]: https://github.com/lucasclerissepro/northstar/blob/master/LICENSE.txt
+[license-url]: https://github.com/lucasclerissepro/filemeta/blob/master/LICENSE.txt
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 

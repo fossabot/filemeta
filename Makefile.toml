@@ -1,0 +1,19 @@
+[tasks.scan]
+install_crate = "cargo-audit"
+command = "cargo"
+args = ["audit"]
+
+[tasks.clippy]
+install_crate = "cargo-clippy"
+command = "cargo"
+args = ["clippy", "--tests"]
+
+[tasks.watch]
+install_crate = "cargo-watch"
+command = "cargo"
+args = ["watch"]
+
+[tasks.format]
+install_crate = "rustfmt"
+command = "cargo"
+args = ["fmt", "--", "--emit=files"]

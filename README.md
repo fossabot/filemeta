@@ -10,8 +10,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<img src=".github/logo.png#gh-dark-mode-only" alt="Logo" width="250" height="80">
-<img src=".github/logo_white.png#gh-white-mode-only" alt="Logo" width="250" height="80">
+
+<img src="https://raw.githubusercontent.com/lucasclerissepro/filemeta/main/.github/logo.png#gh-dark-mode-only" alt="Logo" width="250" height="80">
+<img src="https://raw.githubusercontent.com/lucasclerissepro/filemeta/main/.github/logo_white.png#gh-light-mode-only" alt="Logo" width="250" height="80">
 
 <p align="center">
 Filemeta is a program allowing you to recover information about any files.

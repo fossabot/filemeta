@@ -6,6 +6,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flucasclerissepro%2Ffilemeta.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Flucasclerissepro%2Ffilemeta?ref=badge_shield)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -57,6 +58,9 @@ Extensible by nature Filemeta can support almost any filetype.
 
 
 <!-- ABOUT THE PROJECT -->
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flucasclerissepro%2Ffilemeta.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Flucasclerissepro%2Ffilemeta?ref=badge_large)
 
 ## About The Project
 
